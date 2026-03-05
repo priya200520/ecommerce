@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Hommie Store</title>
 
 <style>
-
-/* RESET */
 
 *{
 margin:0;
@@ -19,133 +14,123 @@ box-sizing:border-box;
 font-family:Arial;
 }
 
-/* NAVBAR */
+body{
+background:#f3f3f3;
+}
 
-.navbar{
+/* HEADER */
+
+header{
+background:#111;
+color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:#131921;
-padding:15px;
-color:white;
+padding:15px 40px;
 }
 
-.navbar h2{
-font-size:24px;
+header h2{
+color:#ff9900;
 }
 
-.navbar input{
-width:40%;
-padding:8px;
-border:none;
-border-radius:4px;
-}
-
-.nav-links a{
+nav a{
 color:white;
 margin-left:15px;
 text-decoration:none;
 font-size:16px;
 }
 
-/* HERO SECTION */
+nav a:hover{
+color:#ff9900;
+}
+
+/* HERO */
 
 .hero{
-height:350px;
-background:url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
+background:#222;
 color:white;
 text-align:center;
+padding:80px 20px;
 }
 
 .hero h1{
 font-size:40px;
-background:rgba(0,0,0,0.5);
-padding:15px;
+margin-bottom:20px;
+}
+
+.hero button{
+padding:12px 25px;
+font-size:16px;
+background:#ff9900;
+border:none;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:#e68a00;
 }
 
 /* PRODUCTS */
 
 .products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
-padding:30px;
-background:#f4f4f4;
+padding:40px;
 }
 
 .product{
 background:white;
-width:220px;
 padding:15px;
-border-radius:10px;
 text-align:center;
+border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .product img{
 width:100%;
-border-radius:10px;
+height:200px;
+object-fit:cover;
 }
 
 .product h3{
 margin:10px 0;
 }
 
-.product p{
+.price{
 color:green;
-font-weight:bold;
+font-size:18px;
 }
 
 .product button{
-margin-top:10px;
-padding:10px;
-background:black;
-color:white;
+background:#ff9900;
 border:none;
+padding:10px;
+width:100%;
 cursor:pointer;
-border-radius:5px;
+}
+
+.product button:hover{
+background:#e68a00;
 }
 
 /* FOOTER */
 
 footer{
+background:#111;
+color:white;
 text-align:center;
 padding:20px;
-background:#131921;
-color:white;
+margin-top:30px;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
-@media(max-width:768px){
+@media(max-width:600px){
 
-.navbar{
+header{
 flex-direction:column;
 gap:10px;
-}
-
-.navbar input{
-width:90%;
-}
-
-.product{
-width:45%;
-}
-
-}
-
-@media(max-width:480px){
-
-.product{
-width:100%;
-}
-
-.hero h1{
-font-size:28px;
 }
 
 }
@@ -156,88 +141,90 @@ font-size:28px;
 
 <body>
 
-<!-- NAVBAR -->
+<header>
 
-<header class="navbar">
+<h2>Hommie Store</h2>
 
-<h2>Hommie</h2>
-
-<input type="text" placeholder="Search products">
-
-<div class="nav-links">
-
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">Cart</a>
-<a href="#">Login</a>
-
-</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="cart.html">Cart</a>
+<a href="login.html">Login</a>
+<a href="register.html">Register</a>
+<a href="admin.html">Admin</a>
+</nav>
 
 </header>
 
-
-<!-- HERO SECTION -->
 
 <section class="hero">
 
 <h1>Welcome to Hommie Store</h1>
 
+<p>Best Clothing Collection</p>
+
+<a href="products.html">
+<button>Shop Now</button>
+</a>
+
 </section>
 
-
-<!-- PRODUCTS -->
 
 <section class="products">
 
 <div class="product">
 
-<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/300">
 
-<h3>Men Shirt</h3>
+<h3>T Shirt</h3>
 
-<p>₹499</p>
+<p class="price">₹499</p>
 
-<button>Add To Cart</button>
+<a href="products.html">
+<button>View Product</button>
+</a>
 
 </div>
 
 
 <div class="product">
 
-<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/300">
 
 <h3>Hoodie</h3>
 
-<p>₹999</p>
+<p class="price">₹999</p>
 
-<button>Add To Cart</button>
+<a href="products.html">
+<button>View Product</button>
+</a>
 
 </div>
 
 
 <div class="product">
 
-<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/300">
 
 <h3>Jeans</h3>
 
-<p>₹1299</p>
+<p class="price">₹1299</p>
 
-<button>Add To Cart</button>
+<a href="products.html">
+<button>View Product</button>
+</a>
 
 </div>
+
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-<p>© 2026 Hommie Store</p>
+<p>© 2026 Hommie Store | All Rights Reserved</p>
 
 </footer>
 
 </body>
-
 </html>

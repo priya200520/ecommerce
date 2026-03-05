@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - Hommie Store</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f3f3f3;
+}
+
+header{
+background:#111;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h2{
+color:#ff9900;
+}
+
+nav a{
+color:white;
+margin-left:15px;
+text-decoration:none;
+}
+
+.container{
+width:90%;
+max-width:600px;
+margin:40px auto;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.container h2{
+margin-bottom:20px;
+}
+
+form input,form textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#ff9900;
+border:none;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e68a00;
+}
+
+@media(max-width:600px){
+
+header{
+flex-direction:column;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>Hommie Store</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="cart.html">Cart</a>
+</nav>
+
+</header>
+
+
+<div class="container">
+
+<h2>Checkout</h2>
+
+<form id="checkoutForm">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="text" placeholder="Mobile Number" required>
+
+<textarea placeholder="Full Address" required></textarea>
+
+<input type="text" placeholder="City" required>
+
+<input type="text" placeholder="Pincode" required>
+
+<button type="submit">Place Order</button>
+
+</form>
+
+</div>
+
+
+<script>
+
+document.getElementById("checkoutForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Order Placed Successfully 🎉");
+
+localStorage.removeItem("cart");
+
+window.location.href="order.html";
+
+});
+
+</script>
+
+</body>
+</html>
