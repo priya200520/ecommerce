@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login</title>
+</head>
+
+<body>
+
+<h2>Admin Login</h2>
+
+<form onsubmit="return checkAdmin()">
+
+<input type="text" id="adminUser" placeholder="Admin Username"><br><br>
+
+<input type="password" id="adminPass" placeholder="Password"><br><br>
+
+<button type="submit">Login</button>
+
+</form>
+
+<script>
+
+function checkAdmin(){
+
+let user = document.getElementById("adminUser").value;
+let pass = document.getElementById("adminPass").value;
+
+if(user=="admin" && pass=="1234"){
+window.location.href="admin.html";
+return false;
+}
+
+else{
+alert("Wrong Admin Details");
+return false;
+}
+
+}
+
+</script>
+
+</body>
+</html>

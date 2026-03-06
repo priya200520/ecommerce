@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>User Registration</title>
+<title>Register - Hommie Store</title>
 
 <style>
 
@@ -18,49 +15,27 @@ font-family:Arial;
 }
 
 body{
-background:#f4f4f4;
-}
-
-/* NAVBAR */
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:#131921;
-padding:15px;
-color:white;
-}
-
-.nav-links a{
-color:white;
-margin-left:15px;
-text-decoration:none;
-}
-
-/* FORM */
-
-.container{
+background:#f3f3f3;
 display:flex;
 justify-content:center;
 align-items:center;
-height:80vh;
+height:100vh;
 }
 
-form{
+.register-box{
 background:white;
-padding:30px;
+padding:40px;
+width:350px;
 border-radius:10px;
-width:320px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-form h2{
+.register-box h2{
 text-align:center;
 margin-bottom:20px;
 }
 
-input{
+.register-box input{
 width:100%;
 padding:10px;
 margin:10px 0;
@@ -68,96 +43,69 @@ border:1px solid #ccc;
 border-radius:5px;
 }
 
-button{
+.register-box button{
 width:100%;
 padding:10px;
-background:black;
-color:white;
+background:#ff6f00;
 border:none;
+color:white;
+font-size:16px;
 cursor:pointer;
 border-radius:5px;
 }
 
-button:hover{
-background:#333;
+.register-box button:hover{
+background:#e65c00;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:480px){
-
-form{
-width:90%;
+.register-box p{
+text-align:center;
+margin-top:15px;
 }
 
+.register-box a{
+color:#ff6f00;
+text-decoration:none;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header class="navbar">
-
-<h2>Hommie</h2>
-
-<div class="nav-links">
-
-<a href="index.html">Home</a>
-<a href="register.html">Register</a>
-<a href="login.html">Login</a>
-
-</div>
-
-</header>
-
-
-<div class="container">
-
-<form onsubmit="return validateForm()">
+<div class="register-box">
 
 <h2>Create Account</h2>
 
-<input type="text" id="name" placeholder="Full Name" required>
+<form id="registerForm">
 
-<input type="email" id="email" placeholder="Email Address" required>
+<input type="text" placeholder="Full Name" required>
 
-<input type="password" id="password" placeholder="Password" required>
+<input type="email" placeholder="Email Address" required>
 
-<input type="password" id="confirm" placeholder="Confirm Password" required>
+<input type="password" placeholder="Create Password" required>
 
 <button type="submit">Register</button>
 
 </form>
 
-</div>
+<p>Already have an account? <a href="login.html">Login</a></p>
 
+</div>
 
 <script>
 
-function validateForm(){
+document.getElementById("registerForm").addEventListener("submit",function(e){
 
-let password=document.getElementById("password").value
+e.preventDefault();
 
-let confirm=document.getElementById("confirm").value
+alert("Registration Successful!");
 
-if(password!==confirm){
+window.location.href="login.html";
 
-alert("Passwords do not match")
-
-return false
-
-}
-
-alert("Registration Successful")
-
-return true
-
-}
+});
 
 </script>
 
 </body>
-
 </html>
